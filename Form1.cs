@@ -16,5 +16,18 @@ namespace OOP04
         {
             InitializeComponent();
         }
+        Auto auticko = new Auto("123-ABC", 3);
+        private void button1_Click(object sender, EventArgs e)
+        {
+            auticko.Rozjed();
+            MessageBox.Show(auticko.ToString());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            auticko.Zastav(200);
+            auticko.CelkovaSpotreba();
+            MessageBox.Show(auticko.ToString());
+        }
     }
 }

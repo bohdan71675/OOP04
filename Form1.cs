@@ -25,7 +25,7 @@ namespace OOP04
 
         private void button2_Click(object sender, EventArgs e)
         {
-            auticko.Zastav(200);
+            auticko.Zastav(100);
             auticko.CelkovaSpotreba();
             MessageBox.Show(auticko.ToString());
         }

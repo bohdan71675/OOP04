@@ -19,7 +19,7 @@ namespace OOP04
         {
             this.znacka = znacka;
             ujetoCelkem = 0;
-            dobaJizdyCelkem = new TimeSpan(); //nechapu
+            dobaJizdyCelkem = new TimeSpan(0);
             this.spotrebaNa100 = spotrebaNa100;
             jede = false;
         }
@@ -33,16 +33,16 @@ namespace OOP04
             jede = true;
             rozjezdTime = DateTime.Now;
         }
-        public void Zastav(int ujetoKilometryZaJednuJizdu)
+        public void Zastav(int kilometry)
         {
             jede = false;
-            ujetoCelkem += ujetoKilometryZaJednuJizdu;
-            TimeSpan ujetoZaJednuJizdu = DateTime.Now - rozjezdTime; //nechapu
-            dobaJizdyCelkem = dobaJizdyCelkem + ujetoZaJednuJizdu;  //nechapu
+            ujetoCelkem += kilometry;
+            TimeSpan ujetoZaJednuJizdu = DateTime.Now - rozjezdTime; 
+            dobaJizdyCelkem = dobaJizdyCelkem + ujetoZaJednuJizdu; 
         }
         public double CelkovaSpotreba()
         {
-            double celkovaSpotreba = (ujetoCelkem / 100) * spotrebaNa100;
+            double celkovaSpotreba = (spotrebaNa100 / 100) * ujetoCelkem;
             return celkovaSpotreba;
         }
 
